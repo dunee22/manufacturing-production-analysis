@@ -1,0 +1,9 @@
+
+Day,Production,Defects,Downtime_Minutes
+Monday,1200,25,15
+Tuesday,1100,40,35
+Wednesday,1350,20,10
+Thursday,1000,55,50
+Friday,1450,18,8
+Saturday,900,60,70
+Sunday,1300,30,20
