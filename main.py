@@ -32,6 +32,8 @@ max_production_day = df[df["Production"] == max_production]
 print(f"Day with maximum production: {max_production_day['Day'].iloc[0]}") # Esto accede a la columna "Day" del DataFrame filtrado (max_production_day) y obtiene el primer valor de esa columna usando iloc[0]. Esto nos dará el día específico en el que se registró la producción máxima.
 print(f"Production: {max_production_day['Production'].iloc[0]}") # Esto imprime solo las columnas "Day" y "Production" del DataFrame filtrado (max_production_day), mostrando el día específico y el número de unidades producidas para el día con la producción máxima.
 
+
+
 plt.bar(
     df["Day"],
     df["Production"],
@@ -47,6 +49,8 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.savefig("images/production_by_day.png", dpi=300, bbox_inches="tight")
 plt.show()
+
+
 
 plt.bar(
     df["Day"],
@@ -69,6 +73,8 @@ plt.title("Defects vs Downtime")
 plt.xlabel("Downtime (minutes)")
 plt.ylabel("Defects")
 plt.show()
+
+
 
 pendiente, intercepto = np.polyfit(
     df["Downtime_Minutes"],

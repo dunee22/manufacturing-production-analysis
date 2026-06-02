@@ -1,4 +1,9 @@
 # Manufacturing Production Analysis
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-darkgreen)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-crimson)
+![Status](https://img.shields.io/badge/Status-Complete-success)
+
 
 ## Project Overview
 This project analyzes daily manufacturing production data, including production output, defects, and downtime, using Python and data visualization techniques to identify patterns and relationships between variables.
@@ -35,6 +40,7 @@ The project includes visual analysis using bar charts and scatter plots to compa
 
 ### Defects vs Downtime
 ![Defects vs Downtime](images/defects_vs_downtime.png)
+
 
 ## Key Findings
 - **Highest production** was recorded on **Friday** with **1450 units**, while the **lowest production** occurred on **Saturday** with **900 units**.
