@@ -43,7 +43,9 @@ plt.ylabel("Production")
 plt.ylim(0,1600)
 for day, production in zip(df["Day"], df["Production"]): 
     plt.text(day, production + 15, str(production),ha="center") # Esto agrega etiquetas de texto encima de cada barra en el gráfico, mostrando el valor de producción correspondiente a cada día. El texto se coloca un poco por encima de la barra (production + 15) para que sea visible.
-plt.savefig("production_by_day.png")
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.savefig("images/production_by_day.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 plt.bar(
@@ -87,6 +89,7 @@ plt.plot(
     
 )
 plt.legend()
-plt.savefig("defects_vs_downtime.png")
+plt.tight_layout()
+plt.savefig("images/defects_vs_downtime.png", dpi=300, bbox_inches="tight")
 plt.show()
 # Esto realiza un ajuste de línea recta (grado 1) a los datos de "Downtime_minutes" y "Defects". Devuelve los coeficientes de la línea ajustada, donde el primer valor es la pendiente y el segundo valor es la intersección con el eje y. Estos coeficientes se pueden usar para trazar la línea de tendencia en el gráfico de dispersión.
