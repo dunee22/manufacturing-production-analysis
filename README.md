@@ -30,6 +30,11 @@ The project includes visual analysis using bar charts and scatter plots to compa
 - **Bar charts**: used to compare daily production output and defect counts.
 - **Scatter plot with trend line**: used to analyze the relationship between downtime and defects and identify positive correlation patterns.
 
+### Production by Day
+![Production by Day](images/production_by_day.png)
+
+### Defects vs Downtime
+![Defects vs Downtime](images/defects_vs_downtime.png)
 
 ## Key Findings
 - **Highest production** was recorded on **Friday** with **1450 units**, while the **lowest production** occurred on **Saturday** with **900 units**.
