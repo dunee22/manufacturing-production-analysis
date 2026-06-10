@@ -6,6 +6,36 @@ import numpy as np
 df = pd.read_csv("data/production_data.csv") # Asegúrate de que la ruta al archivo CSV sea correcta. Si el archivo está en el mismo directorio que tu script, puedes usar simplemente "production_data.csv". Si está en una carpeta llamada "data", entonces la ruta es "data/production_data.csv".
 print(df)
 
+print("\n--- Statistical Summary ---")
+
+numeric_columns = ["Production", "Defects", "Downtime_Minutes"]
+
+for column in numeric_columns:
+    mean_value = np.mean(df[column])
+    min_value = np.min(df[column])
+    max_value = np.max(df[column])
+    std_value = np.std(df[column])
+
+    print(f"\n{column}")
+    print(f"Mean: {mean_value:.2f}")
+    print(f"Min: {min_value}")
+    print(f"Max: {max_value}")
+    print(f"Std: {std_value:.2f}")
+
+correlation = df["Defects"].corr(df["Downtime_Minutes"])
+print(f"\nCorrelation Defects vs Downtime: {correlation:.2f}")
+
+if correlation >= 0.7:
+    print("Interpretation: Strong positive relationship.")
+elif correlation >= 0.3:
+    print("Interpretation: Moderate positive relationship.")
+elif correlation > -0.3:
+    print("Interpretation: Weak or no linear relationship.")
+elif correlation > -0.7:
+    print("Interpretation: Moderate negative relationship.")
+else:
+    print("Interpretation: Strong negative relationship.")
+
 # print(df.info()) Esto nos da información sobre el DataFrame, como el número de filas, columnas, tipos de datos y valores nulos.
 
 # print(df.describe()) Esto nos proporciona estadísticas descriptivas sobre las columnas numéricas del DataFrame, como la media, la desviación estándar, los valores mínimos y máximos, y los percentiles.
