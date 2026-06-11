@@ -9,6 +9,22 @@ def load_data(file_path):
     return pd.read_csv(file_path)
 
 
+# Classify defect levels into quality status categories
+def classify_quality_status(defects):
+    if defects >= 50:
+        return "High Defects"
+    elif defects >= 30:
+        return "Medium Defects"
+    else:
+        return "Low Defects"
+
+
+def print_quality_status_summary(df):
+    print("\nQuality Status Summary:")
+    quality_counts = df["Quality_Status"].value_counts()
+    print(quality_counts)
+
+
 # Print statistical summary for key numeric columns
 def print_statistical_summary(df):
     print("\n--- Statistical Summary ---")
@@ -160,9 +176,14 @@ def print_key_findings(df):
 # Run the full analysis workflow
 def main():
     df = load_data("data/production_data.csv")
+    
+    df["Quality_Status"] = df["Defects"].apply(classify_quality_status)   
+    
     print(df)
     print_statistical_summary(df)
     print_key_findings(df)
+    print_quality_status_summary(df)
+    
     plot_production_by_day(df)
     plot_defects_by_day(df)
     plot_defects_vs_downtime(df)
