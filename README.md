@@ -6,41 +6,76 @@
 
 
 ## Project Overview
-This project analyzes daily manufacturing production data, including production output, defects, and downtime, using Python and data visualization techniques to identify patterns and relationships between variables.
 
+This project analyzes a small manufacturing production dataset using Python. The goal is to identify production patterns, defect trends, downtime behavior, and possible relationships between operational variables.
+
+The analysis focuses on answering practical business questions such as:
+
+* Which day had the highest production?
+* Which day had the lowest production?
+* Which day had the most defects?
+* Is there a relationship between downtime and defects?
+* Which operational patterns may be worth investigating?
+
+This project is part of my learning path toward Data Analyst and Business Intelligence roles.
 
 ## Dataset
-The dataset contains daily manufacturing production data, including production output, defect counts, and downtime minutes. Each row represents one production day and is used to analyze operational performance and relationships between manufacturing variables.
 
+The dataset contains daily manufacturing data with the following columns:
 
-### Dataset Columns
-- **Day**: production day
-- **Production**: total units produced
-- **Defects**: number of defects recorded
-- **Downtime_Minutes**: downtime duration in minutes
-
+| Column             | Description                        |
+| ------------------ | ---------------------------------- |
+| `Day`              | Day of the week                    |
+| `Production`       | Number of units produced           |
+| `Defects`          | Number of defective units recorded |
+| `Downtime_Minutes` | Downtime in minutes                |
 
 ## Tools Used
-- **Python**: core programming language
-- **Pandas**: data analysis and manipulation
-- **Matplotlib**: data visualization
-- **NumPy**: numerical calculations and trend line analysis
 
+* **Python**: core programming language
+* **Pandas**: data analysis and manipulation
+* **Matplotlib**: data visualization
+* **NumPy**: numerical calculations and trend line analysis
+
+## Analysis Process
+
+The analysis was performed using the following steps:
+
+1. Load the dataset with Pandas.
+2. Explore the data structure.
+3. Calculate key statistical metrics.
+4. Identify maximum, minimum, and average values.
+5. Create visualizations using Matplotlib.
+6. Analyze the relationship between downtime and defects.
+7. Generate business-oriented insights.
 
 ## Visualizations
-The project includes visual analysis using bar charts and scatter plots to compare manufacturing variables and identify relationships between production metrics.
 
+The project includes visual analysis using bar charts and a scatter plot to compare manufacturing variables, identify daily performance patterns, and analyze relationships between production metrics.
 
 ### Visual Analysis
-- **Bar charts**: used to compare daily production output and defect counts.
-- **Scatter plot with trend line**: used to analyze the relationship between downtime and defects and identify positive correlation patterns.
+
+* **Production by Day**: compares daily production output and highlights the highest and lowest production days.
+* **Defects by Day**: compares daily defect counts and helps identify days with higher quality issues.
+* **Defects vs Downtime**: analyzes the relationship between downtime and defects using a scatter plot with a trend line.
 
 ### Production by Day
+
+This chart shows daily production levels and helps identify which day had the highest and lowest production output.
+
 ![Production by Day](images/production_by_day.png)
 
-### Defects vs Downtime
-![Defects vs Downtime](images/defects_vs_downtime.png)
+### Defects by Day
 
+This chart shows the number of defects recorded each day. It helps identify which days had higher quality issues.
+
+![Defects by Day](images/defects_by_day.png)
+
+### Defects vs Downtime
+
+This scatter plot shows the relationship between downtime minutes and number of defects. The trend line suggests a strong positive relationship between downtime and defects.
+
+![Defects vs Downtime](images/defects_vs_downtime.png)
 
 ## Key Statistical Findings
 
@@ -52,12 +87,38 @@ Downtime averaged **29.71 minutes per day**, with a minimum of **8 minutes** and
 
 The correlation between **Defects** and **Downtime_Minutes** was **0.98**, indicating a very strong positive relationship. This suggests that days with higher downtime tend to be associated with higher defect counts.
 
-
 ## Key Findings
-- **Highest production** was recorded on **Friday** with **1450 units**, while the **lowest production** occurred on **Saturday** with **900 units**.
-- **Friday** recorded the **lowest number of defects** with **18**, while **Saturday** had the **highest defect count** with **60**.
-- A **positive relationship** was observed between **Downtime_Minutes** and **Defects**, suggesting that higher downtime tends to be associated with higher defect counts.
 
+* **Highest production** was recorded on **Friday** with **1,450 units**.
+* **Lowest production** occurred on **Saturday** with **900 units**.
+* **Friday** recorded the **lowest number of defects** with **18 defects**.
+* **Saturday** had the **highest defect count** with **60 defects**.
+* The combination of **low production** and **high defects** on Saturday may indicate an operational issue worth investigating.
+* A **strong positive relationship** was observed between **Downtime_Minutes** and **Defects**, suggesting that higher downtime tends to be associated with higher defect counts.
+
+## How to Run
+
+Clone the repository and run the Python script:
+
+```bash
+python main.py
+```
+
+Make sure the dataset is located inside the `data/` folder and the generated charts are saved inside the `images/` folder.
+
+## Project Structure
+
+```text
+manufacturing-production-analysis/
+├── data/
+│   └── production_data.csv
+├── images/
+│   ├── production_by_day.png
+│   ├── defects_by_day.png
+│   └── defects_vs_downtime.png
+├── main.py
+└── README.md
+```
 
 ## Future Improvements
 
